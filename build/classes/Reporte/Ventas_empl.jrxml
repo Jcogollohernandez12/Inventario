@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cee818b0-48dc-4c34-b9ce-2eea3d4d1606">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<parameter name="variable" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     tb_empl.`CantVent` AS tb_empl_CantVent,
+     tb_empl.`Correo` AS tb_empl_Correo,
+     tb_empl.`Tel` AS tb_empl_Tel,
+     tb_empl.`Nombre` AS tb_empl_Nombre,
+     tb_empl.`Ident` AS tb_empl_Ident,
+     tb_empl.`Cargo` AS tb_empl_Cargo,
+     tb_empl.`Clave` AS tb_empl_Clave,
+     tb_empl.`SuelB` AS tb_empl_SuelB,
+     tb_empl.`FechaR3` AS tb_empl_FechaR3,
+     tb_empl.`Codigo` AS tb_empl_Codigo
+FROM
+     `tb_empl` tb_empl]]>
+	</queryString>
+	<field name="tb_empl_CantVent" class="java.lang.Integer"/>
+	<field name="tb_empl_Correo" class="java.lang.String"/>
+	<field name="tb_empl_Tel" class="java.lang.String"/>
+	<field name="tb_empl_Nombre" class="java.lang.String"/>
+	<field name="tb_empl_Ident" class="java.lang.Integer"/>
+	<field name="tb_empl_Cargo" class="java.lang.String"/>
+	<field name="tb_empl_Clave" class="java.lang.String"/>
+	<field name="tb_empl_SuelB" class="java.lang.Double"/>
+	<field name="tb_empl_FechaR3" class="java.sql.Timestamp"/>
+	<field name="tb_empl_Codigo" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="168" splitType="Stretch">
+			<staticText>
+				<reportElement x="171" y="113" width="221" height="20" uuid="e91a692f-311b-4629-aa01-9bebf5a79512"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EMPLEADOS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="57" height="20" uuid="8c45b768-d700-4d7c-991a-1af2fea97308"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="87" y="0" width="71" height="20" uuid="84e47911-b8ef-4760-83ef-ea9a10d12641"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="197" y="2" width="112" height="20" uuid="4ab44d9f-0b68-4eb6-a5ee-f4160a4f7570"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Correo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="328" y="2" width="100" height="20" uuid="de83d0c1-2014-46aa-aead-40cea0437fa2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Celular]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="439" y="2" width="56" height="20" uuid="c8944106-350d-4fed-84e5-a22e418c517e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad Ventas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="495" y="0" width="75" height="20" uuid="4e521140-0aaa-4601-95d3-cdfe10c6dd74"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sueldo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="57" height="20" uuid="8895d0b0-6418-4886-aeb7-cd364ef698ae"/>
+				<textFieldExpression><![CDATA[$F{tb_empl_Codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="71" y="0" width="100" height="20" uuid="6c54ecc2-0153-44bd-a25a-f9056de27f51"/>
+				<textFieldExpression><![CDATA[$F{tb_empl_Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="0" width="100" height="20" uuid="eef9f5f5-84e8-416d-8fac-f46de38dbf35"/>
+				<textFieldExpression><![CDATA[$F{tb_empl_Tel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="0" width="35" height="20" uuid="f63491e1-452b-45c7-9d45-35b1f7c0a39e"/>
+				<textFieldExpression><![CDATA[$F{tb_empl_CantVent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="197" y="0" width="163" height="20" uuid="9e83101d-c232-4b27-92eb-a89c938264ef"/>
+				<textFieldExpression><![CDATA[$F{tb_empl_Correo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="505" y="0" width="77" height="20" uuid="40a46c02-fe2b-4425-b2e2-36e142f8e9f8"/>
+				<textFieldExpression><![CDATA[$F{tb_empl_SuelB}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="171" y="28" width="62" height="20" uuid="710836df-90e1-47c0-9d6f-8002cb0ce306"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="470" y="28" width="100" height="20" uuid="299f8bf2-d79d-4f6f-8ab0-d1068fa39306"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="233" y="28" width="40" height="20" uuid="c10468ee-86eb-4d7d-8e3c-b5e135708314"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="23" y="18" width="116" height="20" uuid="bf821866-8468-48f5-816b-bb728b705cf0"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
